@@ -3,267 +3,1046 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fuse Brand Bible — SharePoint Setup Guide</title>
+<title>Fuse Technology — Brand Bible 2025–2026</title>
 <style>
   :root {
-    --teal: #00ABAB; --magenta: #a72886; --navy: #19223F;
-    --gray: #F4F4F4; --border: #E8E8E8; --text: #323231; --mid: #6F6E6E;
+    --teal: #00ABAB;
+    --teal-light: #E0F7F7;
+    --teal-mid: #008C8C;
+    --magenta: #a72886;
+    --magenta-light: #F5E0F0;
+    --magenta-vivid: #a72886;
+    --navy: #19223F;
+    --navy-mid: #2C3557;
+    --charcoal: #323231;
+    --gray-mid: #6F6E6E;
+    --gray-light: #F4F4F4;
+    --white: #FFFFFF;
+    --black: #000000;
+    --border: #E8E8E8;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #F8F8F8; color: var(--text); line-height: 1.6; }
-  header { background: var(--navy); padding: 2rem 2.5rem; }
-  header h1 { color: white; font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
-  header p { color: rgba(255,255,255,0.55); font-size: 13px; margin-top: 4px; }
-  .badge { display: inline-block; background: var(--teal); color: white; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 0.75rem; }
-  main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
-  .intro { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2rem; }
-  .intro p { font-size: 14px; color: var(--text); margin-bottom: 0.5rem; }
-  .intro p:last-child { margin-bottom: 0; }
-  h2 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 1rem; margin-top: 2rem; }
-  h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
-  .step-block { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; position: relative; }
-  .step-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: white; font-size: 12px; font-weight: 700; margin-bottom: 0.75rem; }
-  .step-block h3 { font-size: 15px; margin-bottom: 0.5rem; }
-  .step-block p, .step-block li { font-size: 13.5px; color: var(--text); margin-bottom: 0.35rem; line-height: 1.65; }
-  ul { padding-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0; }
-  .tip { background: #E0F7F7; border-left: 3px solid var(--teal); border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; margin-top: 0.875rem; font-size: 13px; color: #005555; }
-  .warn { background: #FDF4E7; border-left: 3px solid #E8A020; border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; margin-top: 0.875rem; font-size: 13px; color: #6B4200; }
-  .webpart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; margin-top: 0.875rem; }
-  .wp { background: var(--gray); border-radius: 8px; padding: 1rem; border: 1px solid var(--border); }
-  .wp-name { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
-  .wp-use { font-size: 12px; color: var(--mid); }
-  .section-map { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 0.875rem; border-radius: 8px; overflow: hidden; }
-  .section-map th { background: var(--navy); color: white; padding: 0.6rem 0.875rem; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .section-map td { padding: 0.6rem 0.875rem; border-bottom: 1px solid #F0F0F0; vertical-align: top; }
-  .section-map tr:last-child td { border-bottom: none; }
-  .section-map tr:nth-child(even) td { background: #FAFAFA; }
-  .tag { display: inline-block; border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 600; }
-  .tag-t { background: #E0F7F7; color: #005555; }
-  .tag-m { background: #F5E0F0; color: var(--magenta); }
-  .tag-g { background: var(--gray); color: var(--mid); }
-  code { background: var(--gray); padding: 2px 6px; border-radius: 4px; font-size: 12px; font-family: monospace; }
-  .perm-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-top: 0.875rem; }
-  .perm { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
-  .perm-role { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
-  .perm-who { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
-  .perm-can { font-size: 12px; color: var(--mid); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, Helvetica, sans-serif; background: #F8F8F8; color: var(--charcoal); line-height: 1.6; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; width: 230px; height: 100vh;
+    background: var(--navy); padding: 0; overflow-y: auto; z-index: 100;
+    display: flex; flex-direction: column;
+  }
+  .nav-header {
+    padding: 1.75rem 1.5rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-logo {
+    font-size: 28px; font-weight: 900; letter-spacing: -1px;
+    font-style: italic; color: var(--teal); margin-bottom: 2px;
+  }
+  .nav-logo span { color: var(--magenta-vivid); }
+  .nav-sub { font-size: 9px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 2.5px; margin-top: 6px; }
+  .nav-section { padding: 1.1rem 1.5rem 0.3rem; font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.22); text-transform: uppercase; letter-spacing: 2.5px; }
+  nav a { display: flex; align-items: center; gap: 8px; padding: 0.45rem 1.5rem; color: rgba(255,255,255,0.5); font-size: 12.5px; text-decoration: none; transition: all 0.15s; border-left: 2px solid transparent; }
+  nav a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+  nav a.active { color: var(--teal); border-left-color: var(--teal); background: rgba(0,171,171,0.08); }
+  .nav-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: 0.6; flex-shrink: 0; }
+
+  /* ─── MAIN ─── */
+  main { margin-left: 230px; padding: 2.5rem 2.75rem 6rem; max-width: 980px; }
+  section { margin-bottom: 5rem; scroll-margin-top: 1.5rem; }
+  .section-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
+  h1 { font-size: 42px; font-weight: 900; color: var(--navy); line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 1.25rem; }
+  h2 { font-size: 26px; font-weight: 800; color: var(--navy); margin-bottom: 1rem; letter-spacing: -0.5px; }
+  h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+  p { font-size: 14.5px; color: var(--charcoal); line-height: 1.75; margin-bottom: 0.9rem; }
+  ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+  li { font-size: 13.5px; color: var(--charcoal); margin-bottom: 0.35rem; line-height: 1.6; }
   hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
-  .checklist { list-style: none; padding: 0; }
-  .checklist li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 13.5px; display: flex; align-items: flex-start; gap: 0.75rem; }
-  .checklist li:last-child { border-bottom: none; }
-  .checklist li::before { content: '☐'; font-size: 16px; color: var(--teal); flex-shrink: 0; line-height: 1.4; }
-  .done::before { content: '☑' !important; color: var(--teal); }
+  code { background: var(--gray-light); padding: 2px 7px; border-radius: 4px; font-size: 11.5px; font-family: monospace; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 13px; }
+  th { background: var(--navy); color: white; padding: 0.6rem 0.875rem; text-align: left; font-size: 10.5px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+  td { padding: 0.6rem 0.875rem; border-bottom: 1px solid #F0F0F0; vertical-align: top; color: var(--charcoal); }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #FAFAFA; }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--navy); border-radius: 16px; padding: 3rem 3rem 3rem;
+    margin-bottom: 5rem; position: relative; overflow: hidden;
+  }
+  .hero-rings::before {
+    content: ''; position: absolute; top: -80px; right: -80px;
+    width: 320px; height: 320px; border-radius: 50%;
+    border: 50px solid var(--teal); opacity: 0.08;
+  }
+  .hero-rings::after {
+    content: ''; position: absolute; bottom: -100px; right: 60px;
+    width: 240px; height: 240px; border-radius: 50%;
+    border: 35px solid var(--magenta); opacity: 0.1;
+  }
+  .hero-badge { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+  .hero h1 { color: white; font-size: 46px; margin-bottom: 0.75rem; }
+  .hero p { color: rgba(255,255,255,0.6); font-size: 15px; max-width: 540px; margin-bottom: 0; }
+  .hero-version { position: absolute; bottom: 1.5rem; right: 1.75rem; font-size: 10px; color: rgba(255,255,255,0.2); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* ─── CARDS ─── */
+  .card { background: var(--white); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border); margin-bottom: 0.875rem; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.875rem; margin-bottom: 1.25rem; }
+  .card-sm { background: var(--white); border-radius: 10px; padding: 1.1rem 1.25rem; border: 1px solid var(--border); }
+
+  /* ─── HIGHLIGHTS ─── */
+  .hl { border-left: 3px solid var(--teal); background: var(--teal-light); border-radius: 0 10px 10px 0; padding: 1rem 1.25rem; margin-bottom: 1.25rem; }
+  .hl-m { border-left-color: var(--magenta); background: var(--magenta-light); }
+  .hl p { margin-bottom: 0; font-size: 14px; color: var(--navy); }
+  .hl strong { color: var(--teal-mid); }
+  .hl-m strong { color: var(--magenta); }
+
+  /* ─── SWATCHES ─── */
+  .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; }
+  .swatch { border-radius: 10px; overflow: hidden; border: 1px solid rgba(0,0,0,0.07); }
+  .sw-color { height: 72px; }
+  .sw-info { padding: 0.6rem 0.75rem; background: white; }
+  .sw-name { font-size: 12px; font-weight: 700; color: var(--navy); }
+  .sw-hex { font-size: 11px; color: var(--gray-mid); font-family: monospace; }
+  .sw-use { font-size: 10px; color: var(--gray-mid); margin-top: 2px; }
+
+  /* ─── TAGS ─── */
+  .tag { display: inline-block; border-radius: 5px; padding: 3px 10px; font-size: 11.5px; font-weight: 600; margin: 2px; }
+  .tag-t { background: var(--teal-light); color: var(--teal-mid); }
+  .tag-m { background: var(--magenta-light); color: var(--magenta); }
+  .tag-n { background: var(--navy); color: white; }
+  .tag-g { background: var(--gray-light); color: var(--charcoal); }
+
+  /* ─── TONE TABLE ─── */
+  .tone-row { display: grid; grid-template-columns: 100px 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem; align-items: start; }
+  .tone-cat { font-size: 11px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 1px; padding-top: 0.6rem; }
+  .tone-do { background: #F0FBF7; border: 1px solid #B6E5D4; border-radius: 8px; padding: 0.6rem 0.875rem; font-size: 13px; color: #1A5C3F; }
+  .tone-dont { background: #FDF2F2; border: 1px solid #F5C6C6; border-radius: 8px; padding: 0.6rem 0.875rem; font-size: 13px; color: #8B1F1F; }
+
+  /* ─── LOGO SHOWCASE ─── */
+  .logo-box { border-radius: 12px; border: 1px solid var(--border); padding: 2rem; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem; min-height: 120px; }
+  .logo-box.dark { background: var(--navy); border-color: transparent; }
+  .logo-box.magenta-bg { background: var(--magenta); border-color: transparent; }
+  .logo-box.teal-bg { background: var(--teal); border-color: transparent; }
+  .logo-box.light { background: var(--white); }
+  .fuse-wm { font-size: 48px; font-weight: 900; font-style: italic; letter-spacing: -2px; line-height: 1; }
+  .fuse-wm.teal-logo { color: var(--teal); }
+  .fuse-wm.magenta-logo { color: var(--magenta); }
+  .fuse-wm.white-logo { color: white; }
+  .fuse-tech { font-size: 13px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; margin-top: 4px; text-align: right; }
+  .fuse-tech.teal-tech { color: var(--teal); }
+  .fuse-tech.gray-tech { color: var(--gray-mid); }
+  .fuse-tech.white-tech { color: rgba(255,255,255,0.7); }
+  .logo-label { font-size: 11px; color: var(--gray-mid); text-align: center; margin-bottom: 1rem; }
+
+  /* ─── SOCIAL TEMPLATES ─── */
+  .social-post {
+    border-radius: 14px; overflow: hidden; border: 1px solid var(--border);
+    margin-bottom: 0.875rem; background: white;
+  }
+  .sp-header { padding: 0.75rem 1rem; background: var(--gray-light); display: flex; align-items: center; gap: 8px; }
+  .sp-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; font-style: italic; color: white; flex-shrink: 0; }
+  .sp-name { font-size: 13px; font-weight: 700; color: var(--navy); }
+  .sp-handle { font-size: 11px; color: var(--gray-mid); }
+  .sp-platform { margin-left: auto; font-size: 10px; font-weight: 700; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1px; }
+  .sp-image { height: 200px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .sp-body { padding: 1rem; }
+  .sp-copy { font-size: 13px; color: var(--charcoal); line-height: 1.6; margin-bottom: 0.5rem; }
+  .sp-tags { font-size: 12px; color: #0077B5; }
+
+  /* ─── CAMPAIGN CARDS ─── */
+  .campaign { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 1.25rem; }
+  .campaign-header { padding: 1.5rem; color: white; position: relative; overflow: hidden; }
+  .campaign-header h3 { color: white; font-size: 20px; margin-bottom: 0.3rem; }
+  .campaign-header p { color: rgba(255,255,255,0.7); font-size: 13px; margin-bottom: 0; }
+  .campaign-badge { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); margin-bottom: 0.75rem; }
+  .campaign-body { padding: 1.5rem; background: white; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+  .campaign-body.two-col { grid-template-columns: 1fr 1fr; }
+  .cb-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-mid); margin-bottom: 0.4rem; }
+  .cb-val { font-size: 13px; color: var(--navy); line-height: 1.5; }
+
+  /* ─── PILLAR CARDS ─── */
+  .pillar { border-radius: 12px; padding: 1.5rem; margin-bottom: 0.875rem; border: 1px solid rgba(0,0,0,0.06); }
+  .pillar-num { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .pillar-sub-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.75rem; margin-top: 1rem; }
+  .psub-title { font-size: 11.5px; font-weight: 700; margin-bottom: 0.25rem; }
+  .psub-body { font-size: 12px; color: #3D3D3D; margin-bottom: 0; }
+
+  /* ─── TYPE SAMPLES ─── */
+  .type-sample { padding: 1.25rem 1.5rem; background: white; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 0.75rem; }
+  .type-meta { font-size: 9.5px; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; font-weight: 600; }
+
+  /* ─── DO/DONT GRID ─── */
+  .dd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .dd-box { border-radius: 12px; padding: 1.5rem; border: 1px solid; }
+  .dd-do { background: #F0FBF7; border-color: #B6E5D4; }
+  .dd-dont { background: #FDF2F2; border-color: #F5C6C6; }
+  .dd-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1rem; }
+  .dd-do .dd-title { color: #1A5C3F; }
+  .dd-dont .dd-title { color: #8B1F1F; }
+  .dd-list { list-style: none; padding: 0; }
+  .dd-list li { padding: 0.45rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 13px; }
+  .dd-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .dd-do .dd-list li { color: #1A3A2A; }
+  .dd-dont .dd-list li { color: #4A1A1A; }
+
+  /* ─── FOOTER ─── */
+  .doc-footer { text-align: center; font-size: 11px; color: var(--gray-mid); padding-top: 2rem; border-top: 1px solid var(--border); }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Fuse Brand Bible — SharePoint Setup Guide</h1>
-  <p>Step-by-step instructions for your marketing team to publish and maintain the brand bible on SharePoint</p>
-</header>
+<nav>
+  <div class="nav-header">
+    <div class="nav-logo">f<span>u</span>se</div>
+    <div style="font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 2px;">Technology</div>
+    <div class="nav-sub">Brand Bible · 2025–2026</div>
+  </div>
+
+  <div class="nav-section">Foundation</div>
+  <a href="#essence"><span class="nav-dot"></span>Brand Essence</a>
+  <a href="#positioning"><span class="nav-dot"></span>Positioning</a>
+  <a href="#pillars"><span class="nav-dot"></span>Messaging Pillars</a>
+
+  <div class="nav-section">Visual Identity</div>
+  <a href="#logo"><span class="nav-dot"></span>Logo System</a>
+  <a href="#colour"><span class="nav-dot"></span>Colour Palette</a>
+  <a href="#typography"><span class="nav-dot"></span>Typography</a>
+  <a href="#imagery"><span class="nav-dot"></span>Imagery</a>
+  <a href="#layout"><span class="nav-dot"></span>Layout & Design</a>
+
+  <div class="nav-section">Voice & Copy</div>
+  <a href="#voice"><span class="nav-dot"></span>Voice & Tone</a>
+  <a href="#language"><span class="nav-dot"></span>Language Rules</a>
+
+  <div class="nav-section">Campaigns</div>
+  <a href="#campaigns"><span class="nav-dot"></span>Campaign Framework</a>
+  <a href="#social"><span class="nav-dot"></span>Social Media</a>
+
+  <div class="nav-section">Application</div>
+  <a href="#digital"><span class="nav-dot"></span>Digital</a>
+  <a href="#collateral"><span class="nav-dot"></span>Collateral</a>
+  <a href="#dosdont"><span class="nav-dot"></span>Do's & Don'ts</a>
+</nav>
 
 <main>
 
-  <div class="intro">
-    <p><strong>What this guide covers:</strong> How to build the Fuse Brand Bible as a SharePoint modern communication site — no code required. Your marketing team can edit every section directly in SharePoint's page editor.</p>
-    <p style="color: var(--mid);">Estimated setup time: 2–3 hours for initial build · Ongoing edits: 5–10 minutes per update</p>
+<!-- HERO -->
+<div class="hero hero-rings">
+  <div class="hero-badge">Fuse Technology · Brand Bible · Commercial in Confidence</div>
+  <h1>Brand Bible &<br>Style Guide</h1>
+  <p>The single source of truth for how Fuse looks, sounds, and behaves — for every team member, agency, and partner who brings our brand to life.</p>
+  <div class="hero-version">2025 – 2026 Edition</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 01 BRAND ESSENCE -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="essence">
+  <div class="section-label">01 · Foundation</div>
+  <h2>Brand Essence</h2>
+  <p>Everything Fuse creates — a proposal, a social post, a support call — must feel like it comes from the same place. These foundations are that place.</p>
+
+  <div class="card" style="background: var(--navy); border-color: transparent; margin-bottom: 0.875rem;">
+    <p style="font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem;">Customer Value Proposition</p>
+    <p style="font-size: 22px; font-weight: 800; color: white; line-height: 1.3; margin-bottom: 0; letter-spacing: -0.5px;">IT that works. People you trust. Keeping your growing business secure and ready for what's next.</p>
   </div>
 
-  <!-- PHASE 1 -->
-  <div class="badge">Phase 1</div>
-  <h2>Create the SharePoint Communication Site</h2>
-
-  <div class="step-block">
-    <div class="step-num">1</div>
-    <h3>Create a new Communication Site</h3>
-    <ul>
-      <li>Go to your Microsoft 365 home → click <strong>SharePoint</strong></li>
-      <li>Click <strong>"+ Create site"</strong> → select <strong>"Communication site"</strong></li>
-      <li>Choose the <strong>"Blank"</strong> layout (gives you the most control)</li>
-      <li>Site name: <code>Fuse Brand Bible</code></li>
-      <li>Site address: <code>fuse-brand-bible</code> (this becomes your URL)</li>
-      <li>Language: English (Australia)</li>
-      <li>Click <strong>Finish</strong></li>
-    </ul>
-    <div class="tip">💡 Your URL will be: <code>https://[yourtenant].sharepoint.com/sites/fuse-brand-bible</code> — share this with anyone who needs access.</div>
+  <div class="card" style="border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; background: var(--teal-light);">
+    <p style="font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 0.4rem;">Rallying Cry — use verbatim, never paraphrase</p>
+    <p style="font-size: 22px; font-weight: 900; color: var(--navy); letter-spacing: 0.5px; margin-bottom: 0;">WE MANAGE YOUR IT LIKE WE OWN IT.</p>
   </div>
 
-  <div class="step-block">
-    <div class="step-num">2</div>
-    <h3>Apply Fuse brand colours to the site</h3>
-    <ul>
-      <li>Click the <strong>Settings gear</strong> (top right) → <strong>"Change the look"</strong></li>
-      <li>Click <strong>"Theme"</strong> → select <strong>"Custom"</strong> or the closest dark theme</li>
-      <li>Set the primary colour to Fuse Teal: <code>#00ABAB</code></li>
-      <li>Set the accent colour to Fuse Magenta: <code>#A72886</code></li>
-      <li>Under <strong>"Header"</strong> → choose <strong>"Compact"</strong> layout</li>
-      <li>Upload the Fuse logo (teal + Technology version, PNG) as the site logo</li>
-    </ul>
-    <div class="tip">💡 Use the <strong>white reversed logo</strong> (white wordmark) if your header background is dark navy — it will show clearly against the dark background.</div>
+  <div class="card-grid" style="margin-top: 1.25rem;">
+    <div class="card-sm" style="border-top: 3px solid var(--magenta);">
+      <p style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--magenta); margin-bottom: 0.4rem;">Purpose</p>
+      <p style="font-size: 13.5px; margin-bottom: 0;">To transform the way customers engage with technology — aligning IT with business, enabling growth.</p>
+    </div>
+    <div class="card-sm" style="border-top: 3px solid var(--teal);">
+      <p style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--teal-mid); margin-bottom: 0.4rem;">Vision</p>
+      <p style="font-size: 13.5px; margin-bottom: 0;">A cloud-first world where IT is simple, seamless, and invisible — technology that empowers people.</p>
+    </div>
+    <div class="card-sm" style="border-top: 3px solid var(--navy);">
+      <p style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--navy); margin-bottom: 0.4rem;">Mission</p>
+      <p style="font-size: 13.5px; margin-bottom: 0;">Deliver secure, modern managed IT with genuine partnership, 24/7 expert support, and real accountability.</p>
+    </div>
   </div>
 
-  <div class="step-block">
-    <div class="step-num">3</div>
-    <h3>Set up site navigation</h3>
-    <p>Edit the left or top navigation to mirror the brand bible sections. Go to <strong>Settings → Navigation</strong> and add these links:</p>
-    <ul>
-      <li>Brand Essence</li>
-      <li>Positioning</li>
-      <li>Messaging Pillars</li>
-      <li>Logo System</li>
-      <li>Colour Palette</li>
-      <li>Typography</li>
-      <li>Imagery</li>
-      <li>Voice &amp; Tone</li>
-      <li>Language Rules</li>
-      <li>Campaign Framework</li>
-      <li>Social Media</li>
-      <li>Digital Applications</li>
-      <li>Collateral</li>
-      <li>Do's &amp; Don'ts</li>
-    </ul>
-    <div class="tip">💡 Each navigation item should link to a separate SharePoint page within the same site — one page per section makes editing much easier.</div>
-  </div>
-
-  <!-- PHASE 2 -->
   <hr>
-  <div class="badge">Phase 2</div>
-  <h2>Build Each Page Using SharePoint Web Parts</h2>
-  <p style="font-size: 14px; margin-bottom: 1rem;">Every section of the brand bible maps to SharePoint web parts your team can drag, drop, and edit without any code. Here's the mapping:</p>
+  <h3 style="margin-bottom: 0.875rem;">Core Values</h3>
+  <div class="card-grid">
+    <div class="card-sm" style="border-left: 3px solid var(--magenta);">
+      <h3>Ownership</h3>
+      <p style="font-size: 13px; margin-bottom: 0;">We take responsibility for outcomes, not just actions. We work until it's resolved.</p>
+    </div>
+    <div class="card-sm" style="border-left: 3px solid var(--teal);">
+      <h3>Trust</h3>
+      <p style="font-size: 13px; margin-bottom: 0;">Honesty and transparency in every recommendation. Your long-term interest, always.</p>
+    </div>
+    <div class="card-sm" style="border-left: 3px solid var(--navy);">
+      <h3>Excellence</h3>
+      <p style="font-size: 13px; margin-bottom: 0;">ISO 27001:2022 certified. Essential Eight aligned. 24/7 globally supported — no exceptions.</p>
+    </div>
+    <div class="card-sm" style="border-left: 3px solid #6C63FF;">
+      <h3>Partnership</h3>
+      <p style="font-size: 13px; margin-bottom: 0;">We grow together. We navigate challenges together. We celebrate wins together.</p>
+    </div>
+  </div>
+</section>
 
-  <div class="webpart-grid">
-    <div class="wp"><div class="wp-name">Text web part</div><div class="wp-use">Body copy, rules, guidelines, definitions. Most content lives here.</div></div>
-    <div class="wp"><div class="wp-name">Image web part</div><div class="wp-use">Logo variants, photography examples, colour swatches as images.</div></div>
-    <div class="wp"><div class="wp-name">Hero web part</div><div class="wp-use">Section cover — navy/teal background with white heading. Use for page tops.</div></div>
-    <div class="wp"><div class="wp-name">Columns web part</div><div class="wp-use">Side-by-side layouts — Do's vs Don'ts, pillar sub-points, tone examples.</div></div>
-    <div class="wp"><div class="wp-name">Quick Links web part</div><div class="wp-use">Logo asset downloads, template downloads, resource links.</div></div>
-    <div class="wp"><div class="wp-name">Highlighted content</div><div class="wp-use">Campaign cards — automatically surfaces latest campaign documents.</div></div>
-    <div class="wp"><div class="wp-name">Divider web part</div><div class="wp-use">Visual section breaks between content blocks.</div></div>
-    <div class="wp"><div class="wp-name">File viewer</div><div class="wp-use">Embed the brand bible PDF or presentation directly on the page.</div></div>
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 02 POSITIONING -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="positioning">
+  <div class="section-label">02 · Foundation</div>
+  <h2>Brand Positioning</h2>
+
+  <div class="hl hl-m">
+    <p><strong>Positioning Statement:</strong> For growing SMBs who need reliable, secure IT without complexity — Fuse Technology is the managed services partner that delivers enterprise-grade protection and 24/7 expert support, because we manage your IT like we own it.</p>
   </div>
 
-  <table class="section-map" style="margin-top: 1.5rem;">
-    <thead><tr><th>Brand Bible Section</th><th>SharePoint Page Name</th><th>Primary Web Parts</th><th>Difficulty</th></tr></thead>
+  <h3 style="margin-bottom: 0.875rem;">Target Audience</h3>
+  <div class="card-grid">
+    <div class="card-sm">
+      <p style="font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--magenta); margin-bottom: 0.4rem;">Primary · Decision-Maker</p>
+      <p style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem;">CEO / MD / CFO</p>
+      <p style="font-size: 12.5px; margin-bottom: 0;">SMB leader, 20–200 staff. Wants confidence IT is handled. Values trust, security, and simplicity. Time-poor. Outcome-focused. Doesn't want to think about IT.</p>
+    </div>
+    <div class="card-sm">
+      <p style="font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 0.4rem;">Secondary · Influencer</p>
+      <p style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem;">Ops / IT Manager</p>
+      <p style="font-size: 12.5px; margin-bottom: 0;">Technically aware. Evaluates response times, stack, and service depth. Wants a capable partner, not a vendor who disappears after sign-up.</p>
+    </div>
+  </div>
+
+  <hr>
+  <h3 style="margin-bottom: 0.875rem;">Competitive Differentiation</h3>
+  <table>
+    <thead><tr><th>Attribute</th><th>Typical MSP</th><th style="color: var(--teal);">Fuse Technology</th></tr></thead>
     <tbody>
-      <tr><td><strong>Brand Essence</strong></td><td>Brand Essence</td><td>Hero, Text (x3), Columns</td><td><span class="tag tag-t">Easy</span></td></tr>
-      <tr><td><strong>Positioning</strong></td><td>Positioning</td><td>Hero, Text, Columns, Divider</td><td><span class="tag tag-t">Easy</span></td></tr>
-      <tr><td><strong>Messaging Pillars</strong></td><td>Messaging Pillars</td><td>Hero, Columns (x4), Text</td><td><span class="tag tag-t">Easy</span></td></tr>
-      <tr><td><strong>Logo System</strong></td><td>Logo System</td><td>Hero, Image (x10), Text, Quick Links</td><td><span class="tag tag-m">Medium</span></td></tr>
-      <tr><td><strong>Colour Palette</strong></td><td>Colour Palette</td><td>Hero, Image, Text, Columns</td><td><span class="tag tag-t">Easy</span></td></tr>
-      <tr><td><strong>Typography</strong></td><td>Typography</td><td>Hero, Image, Text, File viewer</td><td><span class="tag tag-t">Easy</span></td></tr>
-      <tr><td><strong>Imagery</strong></td><td>Imagery Guidelines</td><td>Hero, Image (gallery), Text, Columns</td><td><span class="tag tag-t">Easy</span></td></tr>
-      <tr><td><strong>Voice &amp; Tone</strong></td><td>Voice and Tone</td><td>Hero, Text, Columns (Do/Don't)</td><td><span class="tag tag-t">Easy</span></td></tr>
-      <tr><td><strong>Language Rules</strong></td><td>Language Rules</td><td>Hero, Text, Columns</td><td><span class="tag tag-t">Easy</span></td></tr>
-      <tr><td><strong>Campaign Framework</strong></td><td>Campaigns</td><td>Hero, Text, Columns (x4), Highlighted content</td><td><span class="tag tag-m">Medium</span></td></tr>
-      <tr><td><strong>Social Media</strong></td><td>Social Media</td><td>Hero, Image, Text, Columns, Quick Links</td><td><span class="tag tag-m">Medium</span></td></tr>
-      <tr><td><strong>Digital Applications</strong></td><td>Digital Guidelines</td><td>Hero, Text, Columns</td><td><span class="tag tag-t">Easy</span></td></tr>
-      <tr><td><strong>Collateral</strong></td><td>Collateral</td><td>Hero, Text, Columns, Quick Links</td><td><span class="tag tag-t">Easy</span></td></tr>
-      <tr><td><strong>Do's &amp; Don'ts</strong></td><td>Dos and Donts</td><td>Hero, Columns (2-col), Text</td><td><span class="tag tag-t">Easy</span></td></tr>
+      <tr><td><strong>Accountability</strong></td><td>Action-based SLAs</td><td>Outcome ownership — open until resolved</td></tr>
+      <tr><td><strong>Security</strong></td><td>Add-on upsell</td><td>Secure by design — built into every service</td></tr>
+      <tr><td><strong>Guarantee</strong></td><td>Best-effort promises</td><td>Cyber Security Guarantee Promise + financial commitment</td></tr>
+      <tr><td><strong>Support</strong></td><td>Business hours</td><td>24/7 globally distributed experts</td></tr>
+      <tr><td><strong>Certification</strong></td><td>Variable</td><td>ISO 27001:2022 + Essential Eight aligned</td></tr>
+      <tr><td><strong>Relationship model</strong></td><td>Reactive break/fix</td><td>Strategic partner invested in your growth</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 03 PILLARS -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="pillars">
+  <div class="section-label">03 · Foundation</div>
+  <h2>Messaging Pillars</h2>
+  <p>These four pillars are the proof points beneath our CVP. Anchor all proposals, presentations, campaigns, and sales conversations to at least one pillar.</p>
+
+  <div class="pillar" style="background: #F9F0F6; border-color: #E5C5DC;">
+    <div class="pillar-num" style="color: var(--magenta);">Pillar 01</div>
+    <h3 style="color: var(--navy); font-size: 18px;">Partnership & Service Excellence</h3>
+    <p style="font-size: 13.5px; margin-bottom: 0;">Your goals, our shared responsibility.</p>
+    <div class="pillar-sub-grid">
+      <div><p class="psub-title" style="color: var(--magenta);">Your Goals, Our Responsibility</p><p class="psub-body">We treat your IT as our own — honest advice, long-term thinking, no hidden agenda.</p></div>
+      <div><p class="psub-title" style="color: var(--magenta);">Accountability, End to End</p><p class="psub-body">We own outcomes, not just actions. Issues stay open until fully resolved.</p></div>
+      <div><p class="psub-title" style="color: var(--magenta);">Customer Experience, Redefined</p><p class="psub-body">Genuine care and responsiveness at every step — not just at sign-up.</p></div>
+    </div>
+  </div>
+
+  <div class="pillar" style="background: var(--teal-light); border-color: #A0DDD8;">
+    <div class="pillar-num" style="color: var(--teal-mid);">Pillar 02</div>
+    <h3 style="color: var(--navy); font-size: 18px;">Security & Trust</h3>
+    <p style="font-size: 13.5px; margin-bottom: 0;">Secure by design, certified to the highest standard, and guaranteed.</p>
+    <div class="pillar-sub-grid">
+      <div><p class="psub-title" style="color: var(--teal-mid);">Secure By Design</p><p class="psub-body">Security integrated into every service. No extra cost, no extra complexity for SMBs.</p></div>
+      <div><p class="psub-title" style="color: var(--teal-mid);">Certified & Trusted</p><p class="psub-body">ISO 27001:2022 certified. Essential Eight aligned. Your compliance, covered.</p></div>
+      <div><p class="psub-title" style="color: var(--teal-mid);">Secure IT, Guaranteed</p><p class="psub-body">Cyber Security Guarantee Promise — rapid expert response backed by a financial commitment.</p></div>
+    </div>
+  </div>
+
+  <div class="pillar" style="background: #EFF0F8; border-color: #C2C5E0;">
+    <div class="pillar-num" style="color: var(--navy-mid);">Pillar 03</div>
+    <h3 style="color: var(--navy); font-size: 18px;">Operational Agility & Workforce Enablement</h3>
+    <p style="font-size: 13.5px; margin-bottom: 0;">Work securely from anywhere. Embrace AI. Stay supported 24/7.</p>
+    <div class="pillar-sub-grid">
+      <div><p class="psub-title" style="color: var(--navy-mid);">Securely Work, Anywhere</p><p class="psub-body">Consistent IT experiences wherever business takes your team.</p></div>
+      <div><p class="psub-title" style="color: var(--navy-mid);">Empowering Your Next Move</p><p class="psub-body">Enable AI adoption, automation, and new ways of working.</p></div>
+      <div><p class="psub-title" style="color: var(--navy-mid);">Support Wherever You Are</p><p class="psub-body">Globally distributed experts. Always connected, always cared for.</p></div>
+    </div>
+  </div>
+
+  <div class="pillar" style="background: #FDF4E7; border-color: #F5D5A0;">
+    <div class="pillar-num" style="color: #8A5500;">Pillar 04</div>
+    <h3 style="color: var(--navy); font-size: 18px;">Modernisation & Efficiency</h3>
+    <p style="font-size: 13.5px; margin-bottom: 0;">One subscription. Modern cloud platform. No downtime. No headaches.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1rem;">
+      <div><p class="psub-title" style="color: #8A5500;">Simplified IT, One Subscription</p><p class="psub-body">Fuse365 bundles leading technologies in a single curated package — no complexity, no workarounds.</p></div>
+      <div><p class="psub-title" style="color: #8A5500;">Modernise Without the Headaches</p><p class="psub-body">Move from legacy to scalable cloud — with industry-specific apps and zero downtime.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 04 LOGO -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="logo">
+  <div class="section-label">04 · Visual Identity</div>
+  <h2>Logo System</h2>
+  <p>The Fuse wordmark is a custom italic, bold, rounded typeface. The distinctive flowing letterforms — particularly the 'f' with its sweeping tail — are the brand's primary visual signature. Always use approved artwork files. Never recreate, trace, or substitute the wordmark.</p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.5rem;">
+    <div>
+      <div class="logo-box light">
+        <div style="text-align: right;">
+          <div class="fuse-wm teal-logo">fuse</div>
+          <div class="fuse-tech teal-tech">Technology</div>
+        </div>
+      </div>
+      <p class="logo-label">Primary — teal on white<br><em>Default use for all light backgrounds</em></p>
+    </div>
+    <div>
+      <div class="logo-box dark">
+        <div style="text-align: right;">
+          <div class="fuse-wm white-logo">fuse</div>
+          <div class="fuse-tech white-tech">Technology</div>
+        </div>
+      </div>
+      <p class="logo-label">Reversed — white on navy<br><em>Dark backgrounds & presentations</em></p>
+    </div>
+    <div>
+      <div class="logo-box magenta-bg">
+        <div style="text-align: right;">
+          <div class="fuse-wm white-logo">fuse</div>
+          <div class="fuse-tech white-tech">Technology</div>
+        </div>
+      </div>
+      <p class="logo-label">Reversed — white on magenta<br><em>Brand highlight moments only</em></p>
+    </div>
+    <div>
+      <div class="logo-box light">
+        <div style="text-align: right;">
+          <div class="fuse-wm magenta-logo">fuse</div>
+          <div class="fuse-tech gray-tech">Technology</div>
+        </div>
+      </div>
+      <p class="logo-label">Magenta variant — on white<br><em>Campaign & event use</em></p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 0.875rem;">
+    <h3 style="margin-bottom: 1rem;">Logo Rules</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+      <div>
+        <p style="font-size: 11px; font-weight: 700; color: #1A5C3F; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">✓ Always</p>
+        <ul>
+          <li>Use approved vector files (.svg, .eps, .ai) for all applications</li>
+          <li>Maintain clear space equal to the cap-height of the 'f' on all four sides</li>
+          <li>Use teal version as the default on white/light backgrounds</li>
+          <li>Include "Technology" sub-label in formal and legal contexts</li>
+          <li>Minimum size: 80px wide digital / 20mm wide print</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size: 11px; font-weight: 700; color: #8B1F1F; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">✗ Never</p>
+        <ul>
+          <li>Stretch, condense, rotate, or skew the wordmark</li>
+          <li>Recreate in a different typeface — even Gotham</li>
+          <li>Apply drop shadows, outlines, or effects</li>
+          <li>Place on busy photographic or patterned backgrounds</li>
+          <li>Use any colour outside the approved four logo colours</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 05 COLOUR -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="colour">
+  <div class="section-label">05 · Visual Identity</div>
+  <h2>Colour Palette</h2>
+  <p>Our palette is bold, modern, and purposeful. Teal and magenta are our defining combination — used together they are unmistakably Fuse. Navy and charcoal anchor the palette with authority.</p>
+
+  <h3 style="margin-bottom: 0.75rem;">Primary Brand Colours</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="sw-color" style="background: #00ABAB;"></div>
+      <div class="sw-info"><div class="sw-name">Fuse Teal</div><div class="sw-hex">#00ABAB</div><div class="sw-use">Logo · Links · Accents</div></div>
+    </div>
+    <div class="swatch">
+      <div class="sw-color" style="background: #a72886;"></div>
+      <div class="sw-info"><div class="sw-name">Fuse Magenta</div><div class="sw-hex">#A72886</div><div class="sw-use">Logo · CTAs · Highlights</div></div>
+    </div>
+    <div class="swatch">
+      <div class="sw-color" style="background: #19223F;"></div>
+      <div class="sw-info"><div class="sw-name">Fuse Navy</div><div class="sw-hex">#19223F</div><div class="sw-use">Headings · Dark BG</div></div>
+    </div>
+    <div class="swatch">
+      <div class="sw-color" style="background: #323231;"></div>
+      <div class="sw-info"><div class="sw-name">Charcoal</div><div class="sw-hex">#323231</div><div class="sw-use">Body text</div></div>
+    </div>
+  </div>
+
+  <h3 style="margin-bottom: 0.75rem;">Supporting Colours</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="sw-color" style="background: #6F6E6E;"></div>
+      <div class="sw-info"><div class="sw-name">Mid Gray</div><div class="sw-hex">#6F6E6E</div><div class="sw-use">Captions · Meta</div></div>
+    </div>
+    <div class="swatch">
+      <div class="sw-color" style="background: #000000;"></div>
+      <div class="sw-info"><div class="sw-name">Black</div><div class="sw-hex">#000000</div><div class="sw-use">High contrast text</div></div>
+    </div>
+    <div class="swatch">
+      <div class="sw-color" style="background: #E0F7F7;"></div>
+      <div class="sw-info"><div class="sw-name">Teal Pale</div><div class="sw-hex">#E0F7F7</div><div class="sw-use">Section fills</div></div>
+    </div>
+    <div class="swatch">
+      <div class="sw-color" style="background: #F5E0F0;"></div>
+      <div class="sw-info"><div class="sw-name">Magenta Pale</div><div class="sw-hex">#F5E0F0</div><div class="sw-use">Section fills</div></div>
+    </div>
+    <div class="swatch">
+      <div class="sw-color" style="background: #F4F4F4;"></div>
+      <div class="sw-info"><div class="sw-name">Light Gray</div><div class="sw-hex">#F4F4F4</div><div class="sw-use">Page backgrounds</div></div>
+    </div>
+    <div class="swatch">
+      <div class="sw-color" style="background: #FFFFFF; border: 1px solid #E8E8E8;"></div>
+      <div class="sw-info"><div class="sw-name">White</div><div class="sw-hex">#FFFFFF</div><div class="sw-use">Primary background</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-bottom: 0.75rem;">Colour Usage Hierarchy</h3>
+    <ul>
+      <li><strong>Teal (#00ABAB)</strong> is the primary brand anchor — logo default, links, active states, section accents, infographic highlights.</li>
+      <li><strong>Magenta (#9F007E)</strong> is the energy colour — CTAs, campaign moments, pull quotes, rally cry. Use with intent. Overuse kills its impact.</li>
+      <li><strong>Navy (#19223F)</strong> is the authority — primary heading colour, dark backgrounds, navigation, formal collateral.</li>
+      <li><strong>Never combine teal + magenta at equal visual weight.</strong> One leads, one supports.</li>
+      <li>Accessibility minimum: 4.5:1 contrast ratio for all body text (WCAG AA). Test every colour combination before publishing.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 06 TYPOGRAPHY -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="typography">
+  <div class="section-label">06 · Visual Identity</div>
+  <h2>Typography</h2>
+  <p>Fuse uses <strong>Gotham</strong> as its primary typeface — geometric, clean, and confident. Gotham Bold drives headings; Gotham Book carries body copy. This pairing creates a clear, professional hierarchy that's instantly recognisable.</p>
+
+  <div class="type-sample">
+    <div class="type-meta">Display / H1 · Gotham Bold · 40–48px · Letter-spacing −1.5px</div>
+    <p style="font-size: 44px; font-weight: 900; color: var(--navy); line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 0;">IT that works.</p>
+  </div>
+  <div class="type-sample">
+    <div class="type-meta">Heading / H2 · Gotham Bold · 28–34px</div>
+    <p style="font-size: 30px; font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 0;">Security built in. Not bolted on.</p>
+  </div>
+  <div class="type-sample">
+    <div class="type-meta">Subheading / H3 · Gotham Bold · 18–22px</div>
+    <p style="font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 0;">Partnership & Service Excellence</p>
+  </div>
+  <div class="type-sample">
+    <div class="type-meta">Subheading Label · Gotham Book · All Caps · 12–14px · Letter-spacing 2px</div>
+    <p style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2.5px; color: var(--teal-mid); margin-bottom: 0;">Security & Trust · Pillar 02</p>
+  </div>
+  <div class="type-sample">
+    <div class="type-meta">Body · Gotham Book · 15–16px · Line-height 1.75</div>
+    <p style="font-size: 15px; font-weight: 400; margin-bottom: 0; color: var(--charcoal);">Our signature 24/7 global support, backed by proven modern technology, keeps you in safe hands. We are invested in your success — with a security guarantee that's more than just words.</p>
+  </div>
+  <div class="type-sample">
+    <div class="type-meta">Caption / Meta · Gotham Book · 11–12px · Mid Gray</div>
+    <p style="font-size: 11.5px; color: var(--gray-mid); margin-bottom: 0;">Classified as Commercial in Confidence · Fuse Technology · 2025–2026</p>
+  </div>
+
+  <div class="card" style="margin-top: 0.875rem;">
+    <h3 style="margin-bottom: 0.75rem;">Typeface Specification</h3>
+    <p style="font-size: 14px; margin-bottom: 0.5rem;"><strong>Licensed (Preferred):</strong> Gotham Bold + Gotham Book (Hoefler & Co). Required for all print, formal presentations, and agency deliverables.</p>
+    <p style="font-size: 14px; margin-bottom: 0.5rem;"><strong>Digital Fallback:</strong> <code>Montserrat</code> (Google Fonts, free) — closest open-source match for web/email when Gotham is not available.</p>
+    <p style="font-size: 14px; margin-bottom: 0;"><strong>System Fallback Stack:</strong> <code>'Gotham', 'Montserrat', 'Segoe UI', Arial, Helvetica, sans-serif</code></p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 07 IMAGERY -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="imagery">
+  <div class="section-label">07 · Visual Identity</div>
+  <h2>Imagery & Photography</h2>
+
+  <div class="card-grid">
+    <div class="card-sm" style="border-top: 3px solid var(--teal);">
+      <h3>People — Confident & Real</h3>
+      <p style="font-size: 13px; margin-bottom: 0;">Natural moments of diverse professionals working with technology. Warm, authentic, modern environments. People look capable and at ease — never posed, never stock-photo stiff.</p>
+    </div>
+    <div class="card-sm" style="border-top: 3px solid var(--magenta);">
+      <h3>Security — Bold & Compelling</h3>
+      <p style="font-size: 13px; margin-bottom: 0;">Strong cybersecurity visuals are approved — shields, network nodes, glowing circuits. Use dark, high-contrast imagery with blue/purple tones for security-specific content. Conveys strength, not fear.</p>
+    </div>
+    <div class="card-sm" style="border-top: 3px solid var(--navy);">
+      <h3>Technology — Clean & Modern</h3>
+      <p style="font-size: 13px; margin-bottom: 0;">Contemporary workplaces, cloud visualisations, connectivity imagery. Avoid blinking server room clichés. Prefer imagery showing technology enabling people, not replacing them.</p>
+    </div>
+  </div>
+
+  <div class="hl">
+    <p><strong>Brand Motif:</strong> The hexagonal node-and-connector network pattern (visible in current collateral) is Fuse's approved background graphic. Use in cool blue-grey tones at 8–15% opacity on section backgrounds and presentation covers. Never compete with content.</p>
+  </div>
+
+  <h3 style="margin-bottom: 0.75rem;">Image Treatment Rules</h3>
+  <ul>
+    <li>High contrast, clean, modern — not vintage, muted, faded, or heavily filtered</li>
+    <li>Dark overlay (navy at 45–60% opacity) required when text sits on photography</li>
+    <li>Aerial city/technology imagery: hero sections and covers only — not body content</li>
+    <li>Never depict frustration, failure, or crisis — our brand communicates confidence and resolution</li>
+    <li>People's faces must not be cropped; always allow breathing room at image edges</li>
+  </ul>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 08 LAYOUT -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="layout">
+  <div class="section-label">08 · Visual Identity</div>
+  <h2>Layout & Design Principles</h2>
+
+  <div class="card-grid">
+    <div class="card-sm"><h3>Whitespace</h3><p style="font-size: 13px; margin-bottom: 0;">Generous whitespace signals premium and confidence. Never crowd elements — edit the content, not the margins. Minimum 48px page margins on desktop.</p></div>
+    <div class="card-sm"><h3>Grid System</h3><p style="font-size: 13px; margin-bottom: 0;">12-column grid for web. Three-column max for card layouts. 24px gutters minimum. All content aligned to the grid — no floating elements.</p></div>
+    <div class="card-sm"><h3>Hierarchy</h3><p style="font-size: 13px; margin-bottom: 0;">One primary action per section. Size, weight, and colour guide attention. The most important element must be visually dominant — always.</p></div>
+    <div class="card-sm"><h3>Iconography</h3><p style="font-size: 13px; margin-bottom: 0;">Consistent 2px stroke-weight line icons (Lucide or Phosphor approved). Icons supplement copy — never replace key messages. Size: 20–24px inline, 40–48px feature icons.</p></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 09 VOICE & TONE -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="voice">
+  <div class="section-label">09 · Voice & Copy</div>
+  <h2>Voice & Tone</h2>
+  <p>Fuse has one voice — but the tone adapts to the context. Think of it as the same person speaking differently at a board meeting vs. a support call. The character never changes; the register does.</p>
+
+  <div class="card" style="margin-bottom: 1.25rem;">
+    <h3 style="margin-bottom: 0.875rem;">Brand Voice Attributes</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;">
+      <span class="tag tag-n">Confident</span>
+      <span class="tag tag-n">Human</span>
+      <span class="tag tag-n">Accountable</span>
+      <span class="tag tag-n">Direct</span>
+      <span class="tag tag-m">Partner-minded</span>
+      <span class="tag tag-m">Knowledgeable</span>
+      <span class="tag tag-t">Reassuring</span>
+      <span class="tag tag-t">Forward-looking</span>
+      <span class="tag tag-g">Plain-speaking</span>
+      <span class="tag tag-g">No-nonsense</span>
+    </div>
+    <p style="font-size: 13.5px; color: var(--gray-mid); margin-bottom: 0;">We are the trusted expert who speaks plainly. Not a salesperson who overpromises. Not a techie who overcomplicates. Not a faceless corporation. A genuine partner who takes ownership.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 100px 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <div></div>
+    <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #1A5C3F;">Write this ↓</div>
+    <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #8B1F1F;">Not this ↓</div>
+  </div>
+  <div class="tone-row"><div class="tone-cat">Confident</div><div class="tone-do">"We'll resolve this. You have our word."</div><div class="tone-dont">"We'll do our best to try to help you with that."</div></div>
+  <div class="tone-row"><div class="tone-cat">Human</div><div class="tone-do">"We get it — IT problems don't wait for Monday morning."</div><div class="tone-dont">"Our 24/7 service desk operationalises support delivery across all SLA tiers."</div></div>
+  <div class="tone-row"><div class="tone-cat">Partner</div><div class="tone-do">"Let's look at what's right for your business long-term."</div><div class="tone-dont">"Our premium tier delivers enhanced feature functionality at scale."</div></div>
+  <div class="tone-row"><div class="tone-cat">Direct</div><div class="tone-do">"Security built in. Not bolted on."</div><div class="tone-dont">"We leverage synergistic security solutions to holistically protect your digital assets."</div></div>
+  <div class="tone-row"><div class="tone-cat">Assured</div><div class="tone-do">"ISO 27001:2022 certified. Backed by a financial guarantee."</div><div class="tone-dont">"We take security very seriously and prioritise it across all our service offerings."</div></div>
+  <div class="tone-row"><div class="tone-cat">Forward</div><div class="tone-do">"We help your teams embrace AI and automation — safely."</div><div class="tone-dont">"We support digital transformation initiatives across your organisation."</div></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 10 LANGUAGE -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="language">
+  <div class="section-label">10 · Voice & Copy</div>
+  <h2>Language Rules</h2>
+
+  <h3 style="margin-bottom: 0.75rem;">Naming & Terminology</h3>
+  <table>
+    <thead><tr><th>Term</th><th>Use This</th><th>Not This</th></tr></thead>
+    <tbody>
+      <tr><td>Company name</td><td>Fuse Technology / Fuse</td><td>Fuse Tech, FT, fuse technology</td></tr>
+      <tr><td>Product</td><td>Fuse365</td><td>fuse365, Fuse 365</td></tr>
+      <tr><td>Security promise</td><td>Cyber Security Guarantee Promise</td><td>security guarantee, cyber guarantee</td></tr>
+      <tr><td>Framework</td><td>Essential Eight</td><td>E8, Essential 8, essential eight</td></tr>
+      <tr><td>Certification</td><td>ISO 27001:2022</td><td>ISO 27001, iso27001, ISO cert</td></tr>
+      <tr><td>Customer type</td><td>SMB / growing business</td><td>small company, SME (use SMB in AU)</td></tr>
+      <tr><td>Support hours</td><td>24/7 support</td><td>around-the-clock, 24x7, always-on</td></tr>
+      <tr><td>Rallying cry</td><td>WE MANAGE YOUR IT LIKE WE OWN IT. (all caps, full stop)</td><td>Any variation or paraphrase</td></tr>
     </tbody>
   </table>
 
-  <!-- PHASE 3 -->
-  <hr>
-  <div class="badge">Phase 3</div>
-  <h2>Upload Logo Assets to SharePoint</h2>
+  <h3 style="margin-bottom: 0.75rem;">Copy Rules</h3>
+  <ul>
+    <li><strong>Lead with the outcome, not the feature.</strong> "Your team stays protected, always" beats "Advanced threat detection enabled."</li>
+    <li><strong>Active voice always.</strong> "We manage your IT" not "Your IT is managed by us."</li>
+    <li><strong>Sentence case for headings.</strong> "Security built in" not "Security Built In."</li>
+    <li><strong>Short sentences. Short paragraphs.</strong> Two to three sentences max in marketing copy blocks.</li>
+    <li><strong>Australian English spelling:</strong> organisation, colour, recognise, licence (noun), programme, catalogue.</li>
+    <li><strong>Numbers:</strong> Spell out one–nine; numerals for 10+. Always numerals for stats (3x faster, 27 countries).</li>
+    <li><strong>No jargon in external copy</strong> unless audience is clearly technical. Abbreviate only after first-use definition.</li>
+  </ul>
+</section>
 
-  <div class="step-block">
-    <div class="step-num">4</div>
-    <h3>Create a Logo Assets document library</h3>
-    <ul>
-      <li>In your brand bible site → click <strong>"+ New" → "Document library"</strong></li>
-      <li>Name it: <code>Brand Assets</code></li>
-      <li>Create folders: <code>Logos</code> / <code>Templates</code> / <code>Photography</code> / <code>Icons</code></li>
-      <li>Upload all 8 logo SVG files into the <code>Logos</code> folder with clear names:</li>
-    </ul>
-    <ul style="margin-top: 0.5rem;">
-      <li><code>fuse-logo-teal-technology.svg</code> — A1</li>
-      <li><code>fuse-logo-magenta-technology.svg</code> — A2</li>
-      <li><code>fuse-logo-black-technology.svg</code> — A3</li>
-      <li><code>fuse-logo-gray-technology.svg</code> — A4</li>
-      <li><code>fuse-logo-teal.svg</code> — B1</li>
-      <li><code>fuse-logo-magenta.svg</code> — B2</li>
-      <li><code>fuse-logo-black.svg</code> — B3</li>
-      <li><code>fuse-logo-gray.svg</code> — B4</li>
-      <li><code>fuse-logo-white-technology.svg</code> — AR reversed</li>
-      <li><code>fuse-logo-white.svg</code> — BR reversed</li>
-    </ul>
-    <div class="tip">💡 Use the <strong>Quick Links web part</strong> on the Logo System page to link directly to each file in this library — team members can download the exact file they need with one click.</div>
-  </div>
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 11 CAMPAIGNS -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="campaigns">
+  <div class="section-label">11 · Campaigns</div>
+  <h2>Campaign Framework</h2>
+  <p>Every Fuse campaign maps to at least one messaging pillar and follows this structure: a hook that surfaces a real pain, a bridge to our proof, and a clear call to action. Here are four ready-to-deploy campaign concepts.</p>
 
-  <!-- PHASE 4 -->
-  <hr>
-  <div class="badge">Phase 4</div>
-  <h2>Set Permissions</h2>
-  <p style="font-size: 14px; margin-bottom: 0.875rem;">Brand bible permissions should be open for viewing but controlled for editing — you don't want anyone accidentally changing guidelines.</p>
-
-  <div class="perm-grid">
-    <div class="perm">
-      <div class="perm-role" style="color: var(--teal);">Site Owner</div>
-      <div class="perm-who">Marketing Lead / Brand Manager</div>
-      <div class="perm-can">Full control — can edit all pages, manage permissions, publish changes.</div>
+  <!-- Campaign 1 -->
+  <div class="campaign">
+    <div class="campaign-header" style="background: var(--navy);">
+      <div class="campaign-badge">Campaign 01 · Security & Trust (Pillar 2)</div>
+      <h3>"What would you do if your systems went down tomorrow?"</h3>
+      <p>Targeting: C-suite, operations leaders · Channel mix: LinkedIn, email, paid search, events</p>
     </div>
-    <div class="perm">
-      <div class="perm-role" style="color: var(--magenta);">Member</div>
-      <div class="perm-who">Marketing Team</div>
-      <div class="perm-can">Can edit page content and upload assets. Cannot change site structure or permissions.</div>
-    </div>
-    <div class="perm">
-      <div class="perm-role" style="color: var(--mid);">Visitor</div>
-      <div class="perm-who">All Fuse staff + external agencies</div>
-      <div class="perm-can">Read-only. Can view all pages and download assets. Cannot edit anything.</div>
+    <div class="campaign-body">
+      <div>
+        <div class="cb-label">Hook / Pain</div>
+        <div class="cb-val">Most businesses think a cyber incident won't happen to them — until it does. 43% of attacks target SMBs. Recovery costs average $274k.</div>
+      </div>
+      <div>
+        <div class="cb-label">Fuse Bridge</div>
+        <div class="cb-val">Our Cyber Security Guarantee Promise means you're not alone when it happens — rapid expert response backed by a financial commitment. Skin in the game.</div>
+      </div>
+      <div>
+        <div class="cb-label">Call to Action</div>
+        <div class="cb-val">Book a free Cybersecurity Health Check → or Download the Essential Eight Explained eBook →</div>
+      </div>
     </div>
   </div>
 
-  <div class="step-block" style="margin-top: 1rem;">
-    <div class="step-num">5</div>
-    <h3>Configure permissions</h3>
+  <!-- Campaign 2 -->
+  <div class="campaign">
+    <div class="campaign-header" style="background: var(--teal-mid);">
+      <div class="campaign-badge">Campaign 02 · Partnership (Pillar 1)</div>
+      <h3>"Your IT partner should feel like part of your team."</h3>
+      <p>Targeting: Business owners who've been let down by an MSP · Channel: LinkedIn, referrals, case studies</p>
+    </div>
+    <div class="campaign-body">
+      <div>
+        <div class="cb-label">Hook / Pain</div>
+        <div class="cb-val">You've heard "we'll escalate that" one too many times. Your last IT provider closed tickets, not problems. You're paying for support that never shows up.</div>
+      </div>
+      <div>
+        <div class="cb-label">Fuse Bridge</div>
+        <div class="cb-val">We manage your IT like we own it. That means ownership, honest advice, and staying until it's fixed — not just until the SLA clock stops.</div>
+      </div>
+      <div>
+        <div class="cb-label">Call to Action</div>
+        <div class="cb-val">Read the [Customer Name] story → or Request a no-obligation IT review →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Campaign 3 -->
+  <div class="campaign">
+    <div class="campaign-header" style="background: var(--magenta);">
+      <div class="campaign-badge">Campaign 03 · Modernisation (Pillar 4)</div>
+      <h3>"One subscription. Everything your growing business needs."</h3>
+      <p>Targeting: Businesses on legacy systems or paying multiple vendors · Channel: Paid, web, email nurture</p>
+    </div>
+    <div class="campaign-body">
+      <div>
+        <div class="cb-label">Hook / Pain</div>
+        <div class="cb-val">You're juggling 6 vendors, 4 invoices, and a patchwork of tools that don't talk to each other. Something is always broken — or about to be.</div>
+      </div>
+      <div>
+        <div class="cb-label">Fuse Bridge</div>
+        <div class="cb-val">Fuse365 brings it all together: leading technologies, curated into a single subscription. No workarounds. No surprise costs. Just IT that works.</div>
+      </div>
+      <div>
+        <div class="cb-label">Call to Action</div>
+        <div class="cb-val">Explore Fuse365 → or Calculate your savings →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Campaign 4 -->
+  <div class="campaign">
+    <div class="campaign-header" style="background: var(--navy-mid);">
+      <div class="campaign-badge">Campaign 04 · Agility (Pillar 3) · AI-Focused</div>
+      <h3>"Is your business AI-ready? Find out in 5 minutes."</h3>
+      <p>Targeting: Forward-thinking SMBs exploring AI adoption · Channel: LinkedIn, web, events, email</p>
+    </div>
+    <div class="campaign-body">
+      <div>
+        <div class="cb-label">Hook / Pain</div>
+        <div class="cb-val">Everyone's talking about AI — but 78% of SMBs don't have the IT foundation to adopt it safely. Your competitors aren't waiting.</div>
+      </div>
+      <div>
+        <div class="cb-label">Fuse Bridge</div>
+        <div class="cb-val">We help your teams embrace AI and automation — safely, efficiently, without disruption. Start with our free AI Readiness Assessment.</div>
+      </div>
+      <div>
+        <div class="cb-label">Call to Action</div>
+        <div class="cb-val">Take the AI Readiness Assessment → or Book an AI strategy conversation →</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hl">
+    <p><strong>Campaign naming convention:</strong> Internal campaign references use the format <code>FY26-[PILLAR]-[NUMBER]</code> e.g. <code>FY26-SEC-01</code>. All external campaign assets must be reviewed by the marketing lead before publication.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 12 SOCIAL MEDIA -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="social">
+  <div class="section-label">12 · Campaigns</div>
+  <h2>Social Media</h2>
+  <p>LinkedIn is Fuse's primary social channel. Every post should feel like it came from a trusted expert who genuinely wants to help — not a marketing department filling a content calendar.</p>
+
+  <div class="card-grid" style="margin-bottom: 1.5rem;">
+    <div class="card-sm" style="border-top: 3px solid #0077B5;">
+      <h3>LinkedIn</h3>
+      <p style="font-size: 12.5px; margin-bottom: 0;"><strong>Primary channel.</strong> Thought leadership, case studies, security alerts, team culture, product announcements. Post 3–5x per week. Mix organic + employee advocacy.</p>
+    </div>
+    <div class="card-sm" style="border-top: 3px solid #1DA1F2;">
+      <h3>X / Twitter</h3>
+      <p style="font-size: 12.5px; margin-bottom: 0;">Industry commentary, cybersecurity news, quick insights. 1–2x per week. Conversational. Engage with partners and industry voices.</p>
+    </div>
+    <div class="card-sm" style="border-top: 3px solid #FF0000;">
+      <h3>YouTube</h3>
+      <p style="font-size: 12.5px; margin-bottom: 0;">Educational explainers, product demos, customer testimonials. Minimum 1 video/month. Thumbnails must follow brand template — navy bg, teal/magenta accent, Gotham Bold title.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-bottom: 1rem;">Post Templates & Examples</h3>
+
+  <!-- Social post 1: Thought leadership -->
+  <div class="social-post">
+    <div class="sp-header">
+      <div class="sp-avatar">f</div>
+      <div><div class="sp-name">Fuse Technology</div><div class="sp-handle">IT Managed Services · 4,200 followers</div></div>
+      <div class="sp-platform">LinkedIn</div>
+    </div>
+    <div class="sp-image" style="background: var(--navy);">
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--teal); text-transform: uppercase; margin-bottom: 0.5rem;">Security Insight</div>
+        <div style="font-size: 26px; font-weight: 900; color: white; line-height: 1.2; max-width: 340px;">43% of cyber attacks target small businesses.</div>
+        <div style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 0.5rem;">Are you protected?</div>
+        <div style="position: absolute; bottom: 1rem; right: 1.25rem; font-size: 12px; font-weight: 800; font-style: italic; color: var(--teal);">fuse Technology</div>
+      </div>
+    </div>
+    <div class="sp-body">
+      <p class="sp-copy">Most small businesses believe they're not a target. Cybercriminals are counting on that.<br><br>The reality: SMBs are hit hardest because they often have fewer defences — and less time to recover.<br><br>That's why we built our Cyber Security Guarantee Promise. Not just words. A real financial commitment that we'll be there when you need us most.<br><br>→ Book your free Cybersecurity Health Check (link in bio)</p>
+      <p class="sp-tags">#CyberSecurity #SMB #ManagedIT #FuseTechnology #EssentialEight</p>
+    </div>
+  </div>
+
+  <!-- Social post 2: Culture/Partnership -->
+  <div class="social-post">
+    <div class="sp-header">
+      <div class="sp-avatar">f</div>
+      <div><div class="sp-name">Fuse Technology</div><div class="sp-handle">IT Managed Services · 4,200 followers</div></div>
+      <div class="sp-platform">LinkedIn</div>
+    </div>
+    <div class="sp-image" style="background: linear-gradient(135deg, var(--teal-mid), var(--navy));">
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="font-size: 32px; font-weight: 900; color: white; font-style: italic; line-height: 1.2;">"We manage your IT<br>like we own it."</div>
+        <div style="width: 40px; height: 3px; background: var(--magenta); margin: 1rem auto;"></div>
+        <div style="font-size: 12px; font-weight: 800; font-style: italic; color: rgba(255,255,255,0.7);">fuse Technology</div>
+      </div>
+    </div>
+    <div class="sp-body">
+      <p class="sp-copy">This isn't a tagline. It's a commitment we make to every client from day one.<br><br>It means honest recommendations — even when they're not what you hoped to hear.<br>It means staying until the problem is solved — not just until the SLA clock stops.<br>It means your IT is our responsibility. Full stop.<br><br>That's the Fuse difference.</p>
+      <p class="sp-tags">#ManagedServices #ITSupport #Partnership #FuseTechnology</p>
+    </div>
+  </div>
+
+  <!-- Social post 3: Campaign/lead gen -->
+  <div class="social-post">
+    <div class="sp-header">
+      <div class="sp-avatar">f</div>
+      <div><div class="sp-name">Fuse Technology</div><div class="sp-handle">IT Managed Services · 4,200 followers</div></div>
+      <div class="sp-platform">LinkedIn</div>
+    </div>
+    <div class="sp-image" style="background: var(--magenta);">
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.7); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem;">Free Assessment</div>
+        <div style="font-size: 28px; font-weight: 900; color: white; line-height: 1.2;">Is your business AI-ready?</div>
+        <div style="background: white; color: var(--magenta); font-weight: 800; font-size: 13px; border-radius: 6px; padding: 8px 20px; display: inline-block; margin-top: 1rem;">Find out in 5 minutes →</div>
+      </div>
+    </div>
+    <div class="sp-body">
+      <p class="sp-copy">Everyone's talking about AI. But here's the question your business needs to answer first:<br><br>Do you have the secure IT foundation to adopt it safely?<br><br>Our free AI Readiness Assessment tells you exactly where you stand — and what to do next.<br><br>→ Take the assessment (link in bio) — it takes less than 5 minutes.</p>
+      <p class="sp-tags">#AIReadiness #BusinessAI #ManagedIT #FuseTechnology #CloudFirst</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 1.25rem;">
+    <h3 style="margin-bottom: 0.875rem;">Social Media Rules</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+      <div>
+        <h3 style="font-size: 13px; color: var(--teal-mid); margin-bottom: 0.5rem;">Image Specs (LinkedIn)</h3>
+        <ul>
+          <li>Single image posts: 1200 × 628px</li>
+          <li>Square posts: 1080 × 1080px</li>
+          <li>Stories/Events: 1080 × 1920px</li>
+          <li>Always include Fuse logo bottom-right on graphics</li>
+          <li>Dark overlay required for text-on-photo</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size: 13px; color: var(--magenta); margin-bottom: 0.5rem;">Content Mix (per month)</h3>
+        <ul>
+          <li>40% — Thought leadership & insights</li>
+          <li>25% — Customer success & case studies</li>
+          <li>20% — Product/service highlights</li>
+          <li>15% — Culture, team, and partnerships</li>
+          <li>Max 5 hashtags per post on LinkedIn</li>
+        </ul>
+      </div>
+    </div>
+    <hr style="margin: 1rem 0;">
     <ul>
-      <li>Go to <strong>Site Settings → Site Permissions</strong></li>
-      <li>Add the marketing team as <strong>Members</strong></li>
-      <li>Share the site link with all Fuse staff — they'll auto-join as <strong>Visitors</strong></li>
-      <li>For external agencies: share specific pages only using <strong>"Share with specific people"</strong> on individual pages</li>
+      <li><strong>Always respond</strong> to comments within 24 hours — even if just to acknowledge. Silence is the enemy of trust.</li>
+      <li><strong>Never post</strong> about competitor weaknesses, pricing comparisons, or unverified statistics.</li>
+      <li><strong>Employee advocacy:</strong> encourage team members to reshare and comment — this amplifies reach significantly on LinkedIn without ad spend.</li>
+      <li><strong>Campaign UTM tagging:</strong> all social links must carry campaign UTM parameters before publishing. Format: <code>utm_source=linkedin&utm_medium=social&utm_campaign=[campaign-id]</code></li>
     </ul>
-    <div class="warn">⚠️ Do not set the site to "Anyone with the link" — this makes it public to the internet. Keep it within your Microsoft 365 tenant, or share specific pages with named external users only.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 13 DIGITAL -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="digital">
+  <div class="section-label">13 · Application</div>
+  <h2>Digital Applications</h2>
+
+  <h3 style="margin-bottom: 0.75rem;">Website</h3>
+  <ul>
+    <li>Primary CTA: Magenta (#9F007E) fill, white Gotham Bold text, border-radius 6px. Hover: darken 10%.</li>
+    <li>Secondary CTA: Navy fill, or white with navy 2px border.</li>
+    <li>Body links: Teal (#00ABAB), underline on hover.</li>
+    <li>Section backgrounds alternate: White → Light Gray → Teal Pale or Magenta Pale for featured sections.</li>
+    <li>Navigation: White background, navy text, teal active state underline, magenta CTA button top-right.</li>
+    <li>Hero sections: Navy or dark overlay, white Gotham Bold type, hexagonal motif at 10% opacity.</li>
+  </ul>
+
+  <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Email</h3>
+  <ul>
+    <li>Max width 600px. White body background. Navy header strip with white Fuse wordmark left-aligned.</li>
+    <li>CTA button: Magenta, minimum 44px height, border-radius 6px.</li>
+    <li>Footer: Light gray background, mid-gray text, teal links. Include unsubscribe, ABN, and address.</li>
+    <li>Use Montserrat (Google Fonts) as the web-safe Gotham substitute for email clients.</li>
+    <li>Subject lines: max 50 characters. No ALL CAPS. No clickbait. Lead with the value or insight.</li>
+  </ul>
+
+  <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Presentations</h3>
+  <ul>
+    <li>Cover: Navy full-bleed, white Gotham Bold title, teal section label, hexagonal motif at 12% opacity, Fuse logo bottom-right.</li>
+    <li>Section dividers: Teal or magenta full-bleed with white heading — alternate to create visual rhythm.</li>
+    <li>Content slides: White background, navy H2 headings, charcoal body text, teal accent colour for key stats.</li>
+    <li>Three-column layout is approved for feature/benefit slides (matching pillar deck format).</li>
+    <li>Footer on every slide: Fuse logo left, slide number right. "Classified as Commercial in Confidence" on sensitive decks.</li>
+    <li>Close all external proposals and presentations with the rally cry: <strong>WE MANAGE YOUR IT LIKE WE OWN IT.</strong></li>
+  </ul>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 14 COLLATERAL -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="collateral">
+  <div class="section-label">14 · Application</div>
+  <h2>Print & Collateral</h2>
+
+  <div class="card-grid">
+    <div class="card-sm">
+      <h3>Business Cards</h3>
+      <p style="font-size: 12.5px; margin-bottom: 0;">Standard 85×55mm. White front: name in navy Gotham Bold (16pt), role in mid-gray (11pt), contact in teal. Full-bleed magenta or teal reverse with white Fuse wordmark. No additional decoration.</p>
+    </div>
+    <div class="card-sm">
+      <h3>Letterhead</h3>
+      <p style="font-size: 12.5px; margin-bottom: 0;">White A4. Fuse logo top-left in teal. Thin teal hairline rule beneath header. Footer: thin navy rule above contact details in mid-gray. 20mm margins minimum.</p>
+    </div>
+    <div class="card-sm">
+      <h3>Proposals</h3>
+      <p style="font-size: 12.5px; margin-bottom: 0;">Cover: navy full-bleed, white type, hexagonal motif. Each section opens with a teal section label. Pull quotes in magenta. Close with rally cry in magenta, large and bold.</p>
+    </div>
+    <div class="card-sm">
+      <h3>eBooks & Reports</h3>
+      <p style="font-size: 12.5px; margin-bottom: 0;">Cover: bold magenta or navy full-bleed, large Gotham Bold title in white. Inside: white pages, navy headings, teal rule separators, pull quotes in magenta. Min 20mm margins.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 15 DO'S & DON'TS -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="dosdont">
+  <div class="section-label">15 · Application</div>
+  <h2>Do's & Don'ts</h2>
+  <p>A fast-reference guide for anyone creating Fuse content — whether you're an internal team member, a designer, or an agency partner.</p>
+
+  <div class="dd-grid">
+    <div class="dd-box dd-do">
+      <div class="dd-title">✓ Always do this</div>
+      <ul class="dd-list">
+        <li>Use the correct teal (#00ABAB) and magenta (#9F007E) — not approximate colours</li>
+        <li>Anchor every piece of content to at least one messaging pillar</li>
+        <li>Lead with the client's outcome or benefit, not our feature</li>
+        <li>Use Gotham Bold for headings, Gotham Book for body</li>
+        <li>Reference concrete proof: ISO cert, Essential Eight, Cyber Guarantee</li>
+        <li>Maintain generous whitespace — less is always more</li>
+        <li>Use Australian English spelling throughout</li>
+        <li>Close proposals and presentations with the rally cry</li>
+        <li>Tag all campaign links with UTM parameters</li>
+        <li>Get marketing sign-off before publishing external content</li>
+      </ul>
+    </div>
+    <div class="dd-box dd-dont">
+      <div class="dd-title">✗ Never do this</div>
+      <ul class="dd-list">
+        <li>Recreate or approximate the logo in any typeface</li>
+        <li>Stretch, rotate, recolour, or add effects to the wordmark</li>
+        <li>Use buzzwords: leverage, synergy, holistic, solutions-oriented</li>
+        <li>Mix more than 3 brand colours in a single design</li>
+        <li>Use teal and magenta at equal visual weight in the same element</li>
+        <li>Make promises we can't back with evidence</li>
+        <li>Post on social without reviewing against voice & tone guidelines</li>
+        <li>Use imagery that conveys frustration, failure, or crisis</li>
+        <li>Paraphrase or shorten the rally cry — use it verbatim or not at all</li>
+        <li>Publish competitor comparisons or unverified statistics</li>
+      </ul>
+    </div>
   </div>
 
-  <!-- PHASE 5 -->
+  <div class="hl hl-m" style="margin-top: 1.25rem;">
+    <p><strong>The brand test:</strong> Before publishing anything — ask "Does this look, sound, and feel like a company that manages IT like they own it?" If yes — you're on brand.</p>
+  </div>
+
   <hr>
-  <div class="badge">Phase 5</div>
-  <h2>Ongoing Maintenance Checklist</h2>
-  <p style="font-size: 14px; margin-bottom: 0.875rem;">Give this checklist to whoever owns the brand bible going forward.</p>
-
-  <div class="step-block">
-    <h3 style="margin-bottom: 1rem;">When to update the brand bible</h3>
-    <ul class="checklist">
-      <li>New campaign launches → update the Campaign Framework page with new brief</li>
-      <li>New logo variant created → upload to Brand Assets library + update Logo System page</li>
-      <li>Social media strategy changes → update Social Media page content mix and specs</li>
-      <li>New product or service → add to Messaging Pillars if it shifts positioning</li>
-      <li>Rebrand or colour update → update Colour Palette page + re-export logo swatches</li>
-      <li>New team member onboarded → share the brand bible site link on day one</li>
-      <li>External agency briefed → share Visitor access to the full site or specific pages</li>
-    </ul>
+  <div class="doc-footer">
+    <p>Fuse Technology Brand Bible & Style Guide · 2025–2026 · Classified as Commercial in Confidence</p>
+    <p style="margin-top: 0.3rem;">For brand queries, asset requests, or approvals — contact the Fuse Marketing team.</p>
+    <p style="margin-top: 0.3rem;">This document supersedes all previous Fuse brand guidelines and brand kit materials.</p>
   </div>
-
-  <div class="step-block">
-    <h3 style="margin-bottom: 0.5rem;">How to edit a page (quick reference for marketing team)</h3>
-    <ul>
-      <li>Navigate to the page you want to edit</li>
-      <li>Click <strong>"Edit"</strong> in the top right of the page</li>
-      <li>Click on any text block to edit copy directly — it works like Word</li>
-      <li>To add a new section: click the <strong>"+"</strong> between sections → choose a web part</li>
-      <li>When finished: click <strong>"Republish"</strong> to make changes live immediately</li>
-      <li>To revert a change: click <strong>"Page details" → "Version history"</strong> → restore previous version</li>
-    </ul>
-    <div class="tip">💡 SharePoint saves version history automatically — you can always roll back any accidental change. No changes are permanent until you click Republish.</div>
-  </div>
-
-  <hr>
-  <div style="text-align: center; font-size: 12px; color: var(--mid); padding-top: 1rem;">
-    Fuse Technology · Brand Bible SharePoint Setup Guide · 2025–2026 · Commercial in Confidence
-  </div>
+</section>
 
 </main>
+
+<script>
+  const links = document.querySelectorAll('nav a');
+  const sections = document.querySelectorAll('section');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+    links.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + cur); });
+  });
+  links.forEach(l => l.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(l.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+  }));
+</script>
 </body>
 </html>
