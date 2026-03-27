@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuse Brand Bible — SharePoint Setup Guide</title>
+<style>
+  :root {
+    --teal: #00ABAB; --magenta: #a72886; --navy: #19223F;
+    --gray: #F4F4F4; --border: #E8E8E8; --text: #323231; --mid: #6F6E6E;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #F8F8F8; color: var(--text); line-height: 1.6; }
+  header { background: var(--navy); padding: 2rem 2.5rem; }
+  header h1 { color: white; font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
+  header p { color: rgba(255,255,255,0.55); font-size: 13px; margin-top: 4px; }
+  .badge { display: inline-block; background: var(--teal); color: white; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 0.75rem; }
+  main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+  .intro { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2rem; }
+  .intro p { font-size: 14px; color: var(--text); margin-bottom: 0.5rem; }
+  .intro p:last-child { margin-bottom: 0; }
+  h2 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 1rem; margin-top: 2rem; }
+  h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+  .step-block { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; position: relative; }
+  .step-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: white; font-size: 12px; font-weight: 700; margin-bottom: 0.75rem; }
+  .step-block h3 { font-size: 15px; margin-bottom: 0.5rem; }
+  .step-block p, .step-block li { font-size: 13.5px; color: var(--text); margin-bottom: 0.35rem; line-height: 1.65; }
+  ul { padding-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0; }
+  .tip { background: #E0F7F7; border-left: 3px solid var(--teal); border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; margin-top: 0.875rem; font-size: 13px; color: #005555; }
+  .warn { background: #FDF4E7; border-left: 3px solid #E8A020; border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; margin-top: 0.875rem; font-size: 13px; color: #6B4200; }
+  .webpart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; margin-top: 0.875rem; }
+  .wp { background: var(--gray); border-radius: 8px; padding: 1rem; border: 1px solid var(--border); }
+  .wp-name { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
+  .wp-use { font-size: 12px; color: var(--mid); }
+  .section-map { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 0.875rem; border-radius: 8px; overflow: hidden; }
+  .section-map th { background: var(--navy); color: white; padding: 0.6rem 0.875rem; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .section-map td { padding: 0.6rem 0.875rem; border-bottom: 1px solid #F0F0F0; vertical-align: top; }
+  .section-map tr:last-child td { border-bottom: none; }
+  .section-map tr:nth-child(even) td { background: #FAFAFA; }
+  .tag { display: inline-block; border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 600; }
+  .tag-t { background: #E0F7F7; color: #005555; }
+  .tag-m { background: #F5E0F0; color: var(--magenta); }
+  .tag-g { background: var(--gray); color: var(--mid); }
+  code { background: var(--gray); padding: 2px 6px; border-radius: 4px; font-size: 12px; font-family: monospace; }
+  .perm-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-top: 0.875rem; }
+  .perm { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
+  .perm-role { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
+  .perm-who { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+  .perm-can { font-size: 12px; color: var(--mid); }
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  .checklist { list-style: none; padding: 0; }
+  .checklist li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 13.5px; display: flex; align-items: flex-start; gap: 0.75rem; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '☐'; font-size: 16px; color: var(--teal); flex-shrink: 0; line-height: 1.4; }
+  .done::before { content: '☑' !important; color: var(--teal); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Fuse Brand Bible — SharePoint Setup Guide</h1>
+  <p>Step-by-step instructions for your marketing team to publish and maintain the brand bible on SharePoint</p>
+</header>
+
+<main>
+
+  <div class="intro">
+    <p><strong>What this guide covers:</strong> How to build the Fuse Brand Bible as a SharePoint modern communication site — no code required. Your marketing team can edit every section directly in SharePoint's page editor.</p>
+    <p style="color: var(--mid);">Estimated setup time: 2–3 hours for initial build · Ongoing edits: 5–10 minutes per update</p>
+  </div>
+
+  <!-- PHASE 1 -->
+  <div class="badge">Phase 1</div>
+  <h2>Create the SharePoint Communication Site</h2>
+
+  <div class="step-block">
+    <div class="step-num">1</div>
+    <h3>Create a new Communication Site</h3>
+    <ul>
+      <li>Go to your Microsoft 365 home → click <strong>SharePoint</strong></li>
+      <li>Click <strong>"+ Create site"</strong> → select <strong>"Communication site"</strong></li>
+      <li>Choose the <strong>"Blank"</strong> layout (gives you the most control)</li>
+      <li>Site name: <code>Fuse Brand Bible</code></li>
+      <li>Site address: <code>fuse-brand-bible</code> (this becomes your URL)</li>
+      <li>Language: English (Australia)</li>
+      <li>Click <strong>Finish</strong></li>
+    </ul>
+    <div class="tip">💡 Your URL will be: <code>https://[yourtenant].sharepoint.com/sites/fuse-brand-bible</code> — share this with anyone who needs access.</div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-num">2</div>
+    <h3>Apply Fuse brand colours to the site</h3>
+    <ul>
+      <li>Click the <strong>Settings gear</strong> (top right) → <strong>"Change the look"</strong></li>
+      <li>Click <strong>"Theme"</strong> → select <strong>"Custom"</strong> or the closest dark theme</li>
+      <li>Set the primary colour to Fuse Teal: <code>#00ABAB</code></li>
+      <li>Set the accent colour to Fuse Magenta: <code>#A72886</code></li>
+      <li>Under <strong>"Header"</strong> → choose <strong>"Compact"</strong> layout</li>
+      <li>Upload the Fuse logo (teal + Technology version, PNG) as the site logo</li>
+    </ul>
+    <div class="tip">💡 Use the <strong>white reversed logo</strong> (white wordmark) if your header background is dark navy — it will show clearly against the dark background.</div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-num">3</div>
+    <h3>Set up site navigation</h3>
+    <p>Edit the left or top navigation to mirror the brand bible sections. Go to <strong>Settings → Navigation</strong> and add these links:</p>
+    <ul>
+      <li>Brand Essence</li>
+      <li>Positioning</li>
+      <li>Messaging Pillars</li>
+      <li>Logo System</li>
+      <li>Colour Palette</li>
+      <li>Typography</li>
+      <li>Imagery</li>
+      <li>Voice &amp; Tone</li>
+      <li>Language Rules</li>
+      <li>Campaign Framework</li>
+      <li>Social Media</li>
+      <li>Digital Applications</li>
+      <li>Collateral</li>
+      <li>Do's &amp; Don'ts</li>
+    </ul>
+    <div class="tip">💡 Each navigation item should link to a separate SharePoint page within the same site — one page per section makes editing much easier.</div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <hr>
+  <div class="badge">Phase 2</div>
+  <h2>Build Each Page Using SharePoint Web Parts</h2>
+  <p style="font-size: 14px; margin-bottom: 1rem;">Every section of the brand bible maps to SharePoint web parts your team can drag, drop, and edit without any code. Here's the mapping:</p>
+
+  <div class="webpart-grid">
+    <div class="wp"><div class="wp-name">Text web part</div><div class="wp-use">Body copy, rules, guidelines, definitions. Most content lives here.</div></div>
+    <div class="wp"><div class="wp-name">Image web part</div><div class="wp-use">Logo variants, photography examples, colour swatches as images.</div></div>
+    <div class="wp"><div class="wp-name">Hero web part</div><div class="wp-use">Section cover — navy/teal background with white heading. Use for page tops.</div></div>
+    <div class="wp"><div class="wp-name">Columns web part</div><div class="wp-use">Side-by-side layouts — Do's vs Don'ts, pillar sub-points, tone examples.</div></div>
+    <div class="wp"><div class="wp-name">Quick Links web part</div><div class="wp-use">Logo asset downloads, template downloads, resource links.</div></div>
+    <div class="wp"><div class="wp-name">Highlighted content</div><div class="wp-use">Campaign cards — automatically surfaces latest campaign documents.</div></div>
+    <div class="wp"><div class="wp-name">Divider web part</div><div class="wp-use">Visual section breaks between content blocks.</div></div>
+    <div class="wp"><div class="wp-name">File viewer</div><div class="wp-use">Embed the brand bible PDF or presentation directly on the page.</div></div>
+  </div>
+
+  <table class="section-map" style="margin-top: 1.5rem;">
+    <thead><tr><th>Brand Bible Section</th><th>SharePoint Page Name</th><th>Primary Web Parts</th><th>Difficulty</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Brand Essence</strong></td><td>Brand Essence</td><td>Hero, Text (x3), Columns</td><td><span class="tag tag-t">Easy</span></td></tr>
+      <tr><td><strong>Positioning</strong></td><td>Positioning</td><td>Hero, Text, Columns, Divider</td><td><span class="tag tag-t">Easy</span></td></tr>
+      <tr><td><strong>Messaging Pillars</strong></td><td>Messaging Pillars</td><td>Hero, Columns (x4), Text</td><td><span class="tag tag-t">Easy</span></td></tr>
+      <tr><td><strong>Logo System</strong></td><td>Logo System</td><td>Hero, Image (x10), Text, Quick Links</td><td><span class="tag tag-m">Medium</span></td></tr>
+      <tr><td><strong>Colour Palette</strong></td><td>Colour Palette</td><td>Hero, Image, Text, Columns</td><td><span class="tag tag-t">Easy</span></td></tr>
+      <tr><td><strong>Typography</strong></td><td>Typography</td><td>Hero, Image, Text, File viewer</td><td><span class="tag tag-t">Easy</span></td></tr>
+      <tr><td><strong>Imagery</strong></td><td>Imagery Guidelines</td><td>Hero, Image (gallery), Text, Columns</td><td><span class="tag tag-t">Easy</span></td></tr>
+      <tr><td><strong>Voice &amp; Tone</strong></td><td>Voice and Tone</td><td>Hero, Text, Columns (Do/Don't)</td><td><span class="tag tag-t">Easy</span></td></tr>
+      <tr><td><strong>Language Rules</strong></td><td>Language Rules</td><td>Hero, Text, Columns</td><td><span class="tag tag-t">Easy</span></td></tr>
+      <tr><td><strong>Campaign Framework</strong></td><td>Campaigns</td><td>Hero, Text, Columns (x4), Highlighted content</td><td><span class="tag tag-m">Medium</span></td></tr>
+      <tr><td><strong>Social Media</strong></td><td>Social Media</td><td>Hero, Image, Text, Columns, Quick Links</td><td><span class="tag tag-m">Medium</span></td></tr>
+      <tr><td><strong>Digital Applications</strong></td><td>Digital Guidelines</td><td>Hero, Text, Columns</td><td><span class="tag tag-t">Easy</span></td></tr>
+      <tr><td><strong>Collateral</strong></td><td>Collateral</td><td>Hero, Text, Columns, Quick Links</td><td><span class="tag tag-t">Easy</span></td></tr>
+      <tr><td><strong>Do's &amp; Don'ts</strong></td><td>Dos and Donts</td><td>Hero, Columns (2-col), Text</td><td><span class="tag tag-t">Easy</span></td></tr>
+    </tbody>
+  </table>
+
+  <!-- PHASE 3 -->
+  <hr>
+  <div class="badge">Phase 3</div>
+  <h2>Upload Logo Assets to SharePoint</h2>
+
+  <div class="step-block">
+    <div class="step-num">4</div>
+    <h3>Create a Logo Assets document library</h3>
+    <ul>
+      <li>In your brand bible site → click <strong>"+ New" → "Document library"</strong></li>
+      <li>Name it: <code>Brand Assets</code></li>
+      <li>Create folders: <code>Logos</code> / <code>Templates</code> / <code>Photography</code> / <code>Icons</code></li>
+      <li>Upload all 8 logo SVG files into the <code>Logos</code> folder with clear names:</li>
+    </ul>
+    <ul style="margin-top: 0.5rem;">
+      <li><code>fuse-logo-teal-technology.svg</code> — A1</li>
+      <li><code>fuse-logo-magenta-technology.svg</code> — A2</li>
+      <li><code>fuse-logo-black-technology.svg</code> — A3</li>
+      <li><code>fuse-logo-gray-technology.svg</code> — A4</li>
+      <li><code>fuse-logo-teal.svg</code> — B1</li>
+      <li><code>fuse-logo-magenta.svg</code> — B2</li>
+      <li><code>fuse-logo-black.svg</code> — B3</li>
+      <li><code>fuse-logo-gray.svg</code> — B4</li>
+      <li><code>fuse-logo-white-technology.svg</code> — AR reversed</li>
+      <li><code>fuse-logo-white.svg</code> — BR reversed</li>
+    </ul>
+    <div class="tip">💡 Use the <strong>Quick Links web part</strong> on the Logo System page to link directly to each file in this library — team members can download the exact file they need with one click.</div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <hr>
+  <div class="badge">Phase 4</div>
+  <h2>Set Permissions</h2>
+  <p style="font-size: 14px; margin-bottom: 0.875rem;">Brand bible permissions should be open for viewing but controlled for editing — you don't want anyone accidentally changing guidelines.</p>
+
+  <div class="perm-grid">
+    <div class="perm">
+      <div class="perm-role" style="color: var(--teal);">Site Owner</div>
+      <div class="perm-who">Marketing Lead / Brand Manager</div>
+      <div class="perm-can">Full control — can edit all pages, manage permissions, publish changes.</div>
+    </div>
+    <div class="perm">
+      <div class="perm-role" style="color: var(--magenta);">Member</div>
+      <div class="perm-who">Marketing Team</div>
+      <div class="perm-can">Can edit page content and upload assets. Cannot change site structure or permissions.</div>
+    </div>
+    <div class="perm">
+      <div class="perm-role" style="color: var(--mid);">Visitor</div>
+      <div class="perm-who">All Fuse staff + external agencies</div>
+      <div class="perm-can">Read-only. Can view all pages and download assets. Cannot edit anything.</div>
+    </div>
+  </div>
+
+  <div class="step-block" style="margin-top: 1rem;">
+    <div class="step-num">5</div>
+    <h3>Configure permissions</h3>
+    <ul>
+      <li>Go to <strong>Site Settings → Site Permissions</strong></li>
+      <li>Add the marketing team as <strong>Members</strong></li>
+      <li>Share the site link with all Fuse staff — they'll auto-join as <strong>Visitors</strong></li>
+      <li>For external agencies: share specific pages only using <strong>"Share with specific people"</strong> on individual pages</li>
+    </ul>
+    <div class="warn">⚠️ Do not set the site to "Anyone with the link" — this makes it public to the internet. Keep it within your Microsoft 365 tenant, or share specific pages with named external users only.</div>
+  </div>
+
+  <!-- PHASE 5 -->
+  <hr>
+  <div class="badge">Phase 5</div>
+  <h2>Ongoing Maintenance Checklist</h2>
+  <p style="font-size: 14px; margin-bottom: 0.875rem;">Give this checklist to whoever owns the brand bible going forward.</p>
+
+  <div class="step-block">
+    <h3 style="margin-bottom: 1rem;">When to update the brand bible</h3>
+    <ul class="checklist">
+      <li>New campaign launches → update the Campaign Framework page with new brief</li>
+      <li>New logo variant created → upload to Brand Assets library + update Logo System page</li>
+      <li>Social media strategy changes → update Social Media page content mix and specs</li>
+      <li>New product or service → add to Messaging Pillars if it shifts positioning</li>
+      <li>Rebrand or colour update → update Colour Palette page + re-export logo swatches</li>
+      <li>New team member onboarded → share the brand bible site link on day one</li>
+      <li>External agency briefed → share Visitor access to the full site or specific pages</li>
+    </ul>
+  </div>
+
+  <div class="step-block">
+    <h3 style="margin-bottom: 0.5rem;">How to edit a page (quick reference for marketing team)</h3>
+    <ul>
+      <li>Navigate to the page you want to edit</li>
+      <li>Click <strong>"Edit"</strong> in the top right of the page</li>
+      <li>Click on any text block to edit copy directly — it works like Word</li>
+      <li>To add a new section: click the <strong>"+"</strong> between sections → choose a web part</li>
+      <li>When finished: click <strong>"Republish"</strong> to make changes live immediately</li>
+      <li>To revert a change: click <strong>"Page details" → "Version history"</strong> → restore previous version</li>
+    </ul>
+    <div class="tip">💡 SharePoint saves version history automatically — you can always roll back any accidental change. No changes are permanent until you click Republish.</div>
+  </div>
+
+  <hr>
+  <div style="text-align: center; font-size: 12px; color: var(--mid); padding-top: 1rem;">
+    Fuse Technology · Brand Bible SharePoint Setup Guide · 2025–2026 · Commercial in Confidence
+  </div>
+
+</main>
+</body>
+</html>
